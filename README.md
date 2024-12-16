@@ -26,7 +26,6 @@ The project includes the following SQL files:
 
 
 ## Example Queries
-Here are some example SQL queries to demonstrate database functionality:
 
 1. **Retrieve Player Game Stats**:
    ```sql
