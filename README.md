@@ -7,23 +7,21 @@ Designed and implemented a basketball database system to track players, teams, g
 - **SQL Scripts**:
   - Creation of tables, sequences, indexes.
   - Example data insertion.
-  - Example data query.
+  - Example data queries/results.
 
----
 
 ## ER Diagram
 Below is the ER diagram for the database:
 
 ![ER Diagram](ERD.png)
 
----
+
 
 ## Relational Schema
 The database schema normalizes the relationships between entities to ensure efficiency and integrity.
 
 ![Relational Schema](relational_schema.png)
 
----
 
 ## SQL Scripts
 The project includes the following SQL files:
