@@ -51,4 +51,5 @@ Here are some example SQL queries to demonstrate database functionality:
       P.PlayerName = 'Alex Johnson';
 
 **Output**:
+
 <img width="892" alt="Screenshot 2024-12-16 at 12 24 44 PM" src="https://github.com/user-attachments/assets/3a3d326c-cff2-4289-af6f-986d1d12967e" />
