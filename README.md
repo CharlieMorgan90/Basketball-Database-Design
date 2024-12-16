@@ -2,40 +2,53 @@
 Designed and implemented a basketball database system to track players, teams, games, and historical statistics. Includes ER diagrams, relational schema, and SQL code to create the database.
 
 ## Features
-- **ER Diagram**: Visual representation of entities, relationships, and attributes.
-- **Relational Schema**: Normalized database schema design.
-- **SQL Scripts**:
-  - Creation of tables, sequences, indexes.
-  - Example data insertion.
-  - Example data queries/results.
+- **ER Diagram**
+- **Relational Schema**
+- **SQL Scripts**
 
 
 ## ER Diagram
-Below is the ER diagram for the database:
 
 ![ER Diagram](ERD.png)
 
 
 
 ## Relational Schema
-The database schema normalizes the relationships between entities to ensure efficiency and integrity.
 
 ![Relational Schema](relational_schema.png)
 
 
 ## SQL Scripts
 The project includes the following SQL files:
-- **SQL_Creation_Script.sql**: Script to create all tables and relationships.
-- **sample_data_insertion.sql**: Script to insert sample data (optional).
-- **queries_and_results.sql**: Example queries to extract useful insights.
+- **TableCreation.sql**: Script to create all tables, sequences, indexes, and relationships.
+- **DataInsertion.sql**: Script to insert sample data.
+- **ExampleQueries.sql**: Example queries to extract useful insights.
 
----
 
 ## Example Queries
 Here are some example SQL queries to demonstrate database functionality:
 
-1. **Retrieve Player Season Stats**:
+1. **Retrieve Player Game Stats**:
    ```sql
-   SELECT PlayerName, SeasonID, PointsPerGame, AssistsPerGame
-   FROM PLAYER
-   JOIN PLAYER_SEASON_STATS ON PLAYER.PlayerID = PLAYER_SEASON_STATS.PlayerID;
+  SELECT 
+    P.PlayerName,
+    G.GameDate,
+    G.StartTime,
+    S.StadiumName,
+    PP.Points,
+    PP.Blocks,
+    PP.Steals,
+    PP.Assists
+  FROM 
+      Player P
+  JOIN 
+      Player_plays_in PP ON P.PlayerID = PP.PlayerID
+  JOIN 
+      Game G ON PP.GameID = G.GameID
+  JOIN 
+      Stadium S ON G.StadiumID = S.StadiumID
+  WHERE 
+      P.PlayerName = 'Alex Johnson';
+
+   **Output**:
+   <img width="892" alt="Screenshot 2024-12-16 at 12 24 44 PM" src="https://github.com/user-attachments/assets/3a3d326c-cff2-4289-af6f-986d1d12967e" />
